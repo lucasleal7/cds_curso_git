@@ -1,14 +1,12 @@
-import pandas as pd 
-import numpy as np
 import streamlit as st
+from src.extraction import load_data
 
-def load_data():
-    return pd.read_csv(r"C:\Users\55149\OneDrive - Fatec Centro Paula Souza\Documents\repos\curso_git\projeto\data\raw\bike.csv")
+st.set_page_config(layout='wide')
 
 def main():
-    df=load_data()
+    df_raw=load_data()
 
-    st.dataframe(df)
+    st.dataframe(df_raw)
 
 if __name__=='__main__':
         main()
